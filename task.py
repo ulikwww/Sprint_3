@@ -26,7 +26,7 @@ class OnlineSalesRegisterCollector:
             self.__number_items += 1
 
     def delete_item_from_check(self, name):
-        if name not in name_items:
+        if name not in self.__name_items:
             raise NameError('Позиция отсутствует в чеке')
         else:
             self.__name_items.pop()
@@ -54,7 +54,7 @@ class OnlineSalesRegisterCollector:
         amount = sum(total)
 
         if self.__number_items > 10:
-            amount*= 0,9
+            amount*= 0.9
         vat = amount * 0.2
         return vat
         
